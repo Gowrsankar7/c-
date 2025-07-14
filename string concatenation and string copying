@@ -1,0 +1,64 @@
+#include <iostream>
+using namespace std;
+
+// Custom strcat
+void mystrcat(char *dest, char *src) {
+    while (*dest)
+        dest++;
+    while (*src)
+        *dest++ = *src++;
+    *dest = '\0';
+}
+
+// Custom n-strcat
+void mstrcat(char *dest, char *src, int n) {
+    while (*dest)
+        dest++;
+    while (n-- && *src)
+        *dest++ = *src++;
+    *dest = '\0';
+}
+
+// Custom strcpy
+void mystrcpy(char *dest, char *src) {
+    while (*src)
+        *dest++ = *src++;
+    *dest = '\0';
+}
+
+// Custom strncpy
+void mystrncpy(char *dest, char *src, int n) {
+    while (n-- && *src)
+        *dest++ = *src++;
+    *dest = '\0';
+}
+
+int main() {
+    char dest1[50] = "hello";
+    char src1[] = "programming";
+    int n;
+
+    cin >> n;
+
+    mystrcat(dest1, src1);
+    cout << "After concatenation dest1 = " << dest1 << endl;
+
+    mstrcat(dest1, src1, n);
+    cout << "After n concatenation dest1 = " << dest1 << endl;
+
+    mystrcpy(dest1, src1);
+    cout << "After copying dest1 = " << dest1 << endl;
+
+    mystrncpy(dest1, src1, n);
+    cout << "After n copying dest1 = " << dest1 << endl;
+
+    return 0;
+}
+
+
+output:
+5
+After concatenation dest1 = helloprogramming
+After n concatenation dest1 = helloprogrammingprogr
+After copying dest1 = programming
+After n copying dest1 = progr
