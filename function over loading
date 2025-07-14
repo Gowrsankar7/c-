@@ -1,0 +1,47 @@
+#include <iostream>
+using namespace std;
+
+// No-parameter version
+void sum() {
+    int a, b, c;
+    cin >> a >> b;
+    c = a + b;
+    cout << "Value of c = " << c << endl;
+}
+
+// Two integers
+void sum(int a, int b) {
+    int c = a + b;
+    cout << "Value of c = " << c << endl;
+}
+
+// Two doubles
+void sum(double a, double b) {
+    double c = a + b;
+    cout << "Value of c = " << c << endl;
+}
+
+// Three integers
+void sum(int a, int b, int c) {
+    int d = a + b + c;
+    cout << "Value of d = " << d << endl;
+}
+
+int main() {
+    int z;
+    
+    sum();           // Will ask for input
+    sum(10, 20);     // Uses 2-integer version
+    sum(2.5, 3.7);   // Uses double version
+    sum(1, 2, 3);    // Uses 3-integer version
+
+    return 0;
+}
+
+
+output:
+5 7
+Value of c = 12
+Value of c = 30
+Value of c = 6.2
+Value of d = 6
