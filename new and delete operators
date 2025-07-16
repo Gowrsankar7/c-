@@ -1,0 +1,35 @@
+#include<iostream>
+//#include<conio.h>
+using namespace std;
+
+int main()
+ {
+     int *p=new int[3],k;
+     for(k=0;k<3;k++)
+     {
+         cout<<"enter the numbers"<<endl;
+         cin>>*p;
+         p++;
+     }
+     
+  p=p-3;
+   for(k=0;k<3;k++)
+   { 
+       cout<<p<<"\t"<<*p<<endl;
+       p++;
+   }
+   
+  p=p-3;
+  delete[]p;
+  return 0;
+ }
+output:
+enter the numbers
+1
+enter the numbers
+12
+enter the numbers
+3
+0x122532b0	1
+0x122532b4	12
+0x122532b8	3
