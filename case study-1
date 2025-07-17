@@ -1,0 +1,29 @@
+#include<iostream>
+using namespace std;
+
+int main()
+{
+    cout<<"no.of inputs"<<endl;
+    int n;
+    cin>>n;
+    int *p=new int[n],k;
+  for(k=0;k<n;k++)    
+  {
+      cout<<"enter a number"<<endl;
+      cin>>*p;
+      p++;
+  }
+  p=p-n;
+  
+  for(k=0;k<n;k++)
+  {
+      cout<<"number is="<<*p<<"\t"<<p<<endl;
+      p++;
+  }
+  
+  p=p-n;
+  delete[]p;
+  return 0;
+}
+  
+  
