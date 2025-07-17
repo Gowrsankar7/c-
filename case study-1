@@ -26,4 +26,16 @@ int main()
   return 0;
 }
   
-  
+
+output:
+no.of inputs
+3
+enter a number
+3
+enter a number
+5
+enter a number
+7
+number is=3	0x2937dad0
+number is=5	0x2937dad4
+number is=7	0x2937dad8
