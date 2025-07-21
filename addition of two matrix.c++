@@ -55,3 +55,23 @@ void matrix::add()
      k.display();
      return 0;
  }
+
+
+#output:
+Enter number of columns and rows: 2
+
+2
+read a:
+1
+4
+2
+3
+read b:
+5
+6
+4
+1
+matrix c is:
+61064
+
+=== Code Execution Successful ===
