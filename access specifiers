@@ -1,0 +1,129 @@
+#include<iostream>
+using namespace std;
+
+class sample
+{public:
+ int a;
+ float b;
+ 
+ void printdata()
+ {
+     cout<<a<<"\t"<<b<<endl;
+ }};
+ int main()
+ {
+     sample s;
+     s.a=4;
+     s.b=7;
+     s.printdata();
+     return 0;
+ }
+
+
+output:
+4 7
+
+
+
+
+
+
+
+#include<iostream>
+using namespace std;
+
+class sample
+{private:
+ int a;
+ float b;
+ 
+ void printdata()
+ {
+     cout<<a<<"\t"<<b<<endl;
+ }};
+ int main()
+ {
+     sample s;
+     s.a=4;
+     s.b=7;
+     s.getdata();
+     s.printdata();
+     return 0;
+ }
+
+output:
+ERROR!
+/tmp/9rPYMNjnnd/main.cpp: In function 'int main()':
+/tmp/9rPYMNjnnd/main.cpp:16:8: error: 'int sample::a' is private within this context
+   16 |      s.a=4;
+      |        ^
+/tmp/9rPYMNjnnd/main.cpp:6:6: note: declared private here
+    6 |  int a;
+      |      ^
+/tmp/9rPYMNjnnd/main.cpp:17:8: error: 'float sample::b' is private within this context
+   17 |      s.b=7;
+      |        ^
+/tmp/9rPYMNjnnd/main.cpp:7:8: note: declared private here
+    7 |  float b;
+      |        ^
+ERROR!
+/tmp/9rPYMNjnnd/main.cpp:18:17: error: 'void sample::printdata()' is private within this context
+   18 |      s.printdata();
+      |      ~~~~~~~~~~~^~
+/tmp/9rPYMNjnnd/main.cpp:9:7: note: declared private here
+    9 |  void printdata()
+      |       ^~~~~~~~~
+
+
+=== Code Exited With Errors ===
+
+
+
+
+
+
+#include<iostream>
+using namespace std;
+
+class sample
+{protected:
+ int a;
+ float b;
+ 
+ void printdata()
+ {
+     cout<<a<<"\t"<<b<<endl;
+ }};
+ int main()
+ {
+     sample s;
+     s.a=4;
+     s.b=7;
+     s.getdata();
+     s.printdata();
+     return 0;
+ }
+
+output:
+main.cpp: In function ‘int main()’:
+main.cpp:16:8: error: ‘int sample::a’ is protected within this context
+   16 |      s.a=4;
+      |        ^
+main.cpp:6:6: note: declared protected here
+    6 |  int a;
+      |      ^
+main.cpp:17:8: error: ‘float sample::b’ is protected within this context
+   17 |      s.b=7;
+      |        ^
+main.cpp:7:8: note: declared protected here
+    7 |  float b;
+      |        ^
+main.cpp:18:8: error: ‘class sample’ has no member named ‘getdata’
+   18 |      s.getdata();
+      |        ^~~~~~~
+main.cpp:19:17: error: ‘void sample::printdata()’ is protected within this context
+   19 |      s.printdata();
+      |      ~~~~~~~~~~~^~
+main.cpp:9:7: note: declared protected here
+    9 |  void printdata()
+      |       ^~~~~~~~~
