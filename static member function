@@ -1,0 +1,49 @@
+#include<iostream>
+using namespace std;
+
+class test
+{
+    int code;
+    static int count;
+    public:
+    void setcode()
+    {
+        code=++count;
+    }
+    void showcode()
+    {
+        cout<<"object number:"<<code<<endl;
+        
+    }
+    static void showcount()
+    {
+        cout<<"count:"<<count<<endl;
+    }
+};
+int test::count;
+int main()
+{
+    test t1,t2;
+    t1.setcode();
+     t1.showcode();
+    test::showcount();
+    t2.setcode();
+    t2.showcode();
+    test::showcount();
+    test t3;
+    t3.setcode();
+    t3.showcode();
+    test::showcount();
+    return 0;
+}
+
+
+
+output:
+object number:1
+count:1
+object number:2
+count:2
+object number:3
+count:3
+
