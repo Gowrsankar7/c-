@@ -1,0 +1,66 @@
+#include<iostream>
+using namespace std;
+
+class player
+{private:
+    char name[5];
+    int age,runs;
+    static char team[10];
+     public:
+     void getdata()
+     {
+         cout<<"enter name;"<<endl;
+         cin>>name;
+         cout<<"enter age and runs:"<<endl;
+         cin>>age>>runs;
+         
+     }
+     void display();
+};
+ void player::display()
+ {
+     cout<<"nameof player is:"<<name<<endl;
+     cout<<"age and runs of the player:"<<age<<"\t"<<runs<<endl;
+     
+ }
+ char player::team[10]="INDIA";
+ 
+ 
+ int main()
+ {
+     player MSD,VK,RS;
+     MSD.getdata();
+     MSD.display();
+     VK.getdata();
+     VK.display();
+     RS.getdata();
+     RS.display();
+     return 0;
+     
+ }
+ 
+ 
+ 
+ output:
+enter name;
+dhoni
+enter age and runs:
+44
+7777
+nameof player is:dhoni
+age and runs of the player:44	7777
+enter name;
+virat
+enter age and runs:
+40
+6666
+nameof player is:virat
+age and runs of the player:40	6666
+enter name;
+rahul 
+enter age and runs:
+30
+5555
+nameof player is:rahul
+age and runs of the player:30	5555
+
