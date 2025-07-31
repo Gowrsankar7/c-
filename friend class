@@ -1,0 +1,106 @@
+#include<iostream>
+using namespace std;
+
+class boy;
+class girl
+{
+ int accno;
+float amount;
+int bal;
+char name[5];
+public:
+  void girl_inf()
+  {
+   cout<<"enter girl details:"<<endl;
+   cin>>name;
+   cout<<"accno:\t"<<endl;
+   cin>>accno;
+   cout<<"amount:\t"<<endl;
+   cin>>amount;
+ }
+ void girl_accinf()
+ {
+  cout<<"girlname:"<<name<<endl;
+  cout<<"girl acc no:"<<accno<<endl;
+  cout<<"girls balance amount"<<endl;
+}
+friend class boy;
+}g;
+
+class boy
+ {
+  int boyamount;
+
+  public:
+void boysinf()
+{
+
+  cout<<"enter boys name:"<<endl;
+  cin>>g.name;
+  cout<<"enter boys account number:"<<endl;
+  cin>>g.accno;
+  cout<<"enter amount in boys account:"<<endl;
+  cin>>boyamount;
+ }
+ void totamount();
+ }b;
+
+ void boy::totamount()
+ {
+  int withdraw;
+  cout<<"enter amount to withdraw:"<<endl;
+ cin>>withdraw;
+
+ g.amount=g.amount-withdraw;
+
+ boyamount=boyamount+withdraw;
+
+ cout<<"\nboy name:\t"<<g.name;
+ cout<<"\n boy acc number:\t"<<g.accno;
+ cout<<"\nboy total amount now:";
+ cout<<boyamount;
+ cout<<"\ngirls balance amount ="<<g.amount;
+  }
+
+ int main()
+ {
+  g.girl_inf();
+  g.girl_accinf();
+  b.boysinf();
+  b.totamount();
+ 
+return 0;
+}
+  
+
+output:
+enter girl details:
+rithu
+accno:	
+123
+amount:	
+345765
+girlname:rithu
+girl acc no:123
+girls balance amount:345765
+
+enter boys name:
+gow
+enter boys account number:
+54
+enter amount in boys account:
+5432
+enter amount to withdraw:
+65
+
+boy name:	gow
+ boy acc number:	54
+boy total amount now:5497
+girls balance amount =345700
+
+
+
+
+
+
+
