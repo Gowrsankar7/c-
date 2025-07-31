@@ -1,0 +1,48 @@
+#include<iostream>
+using namespace std;
+class ac
+{
+    char name[15];
+    int acno;
+    float bal;
+    public:
+    void read();
+    friend void showbal(ac);
+};
+void ac::read()
+{
+    cout<<"\n read name:";
+cin>>name;
+cout<<"\n read ac:";
+cin>>acno;
+cout<<"\n read balance:";
+cin>>bal;
+}
+void showbal(ac a)
+{ cout<< "\n show the details:";
+    cout<<"\nname:"<<a.name;
+    cout<<"\n balance of A/C no:"<<a.acno<<"is RS/-:"<<a.bal;
+}
+int main()
+{
+    ac k;
+    k.read();
+    showbal(k);
+    return 0;
+}
+
+Output:
+read name: gowri
+ read ac:123
+
+ read balance:7777
+
+ show the details:
+name:rahul
+ balance of A/C no:123is RS/-:7777
+
+
+
+
+
+
