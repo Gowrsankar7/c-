@@ -1,0 +1,96 @@
+
+#include<iostream>
+using namespace std;
+
+class complex {
+private:
+    int real;
+    int img;
+
+public:
+    complex() {
+        real = 0;
+        img = 0;
+    }
+
+    complex(int x, int y) {
+        real = x;
+        img = y;
+    }
+
+    complex(const complex &c) {
+        real = c.real;
+        img = c.img;
+    }
+
+    ~complex() {
+        cout << "destructor called for (" << real << "," << img << ")" << endl;
+    }
+
+    complex& operator=(const complex &c) {
+        if (this != &c) {
+            real = c.real;
+            img = c.img;
+        }
+        return *this;
+    }
+
+    void getdata() {
+        cout << "Enter real part: ";
+        cin >> real;
+        cout << "Enter imaginary part: ";
+        cin >> img;
+    }
+
+    void copy(const complex &c) {
+        real = c.real;
+        img = c.img;
+    }
+
+    void display() const {
+        cout << real << "+" << img << "i" << endl;
+    }
+};
+
+int main() {
+    complex c1;
+    c1.display();
+
+    complex c2(9, 10);
+    cout << "Enter second complex number:" << endl;
+    c2.getdata();
+
+    cout << "c2: ";
+    c2.display();
+
+    complex c3;
+    c3.copy(c2);
+
+    cout << "Copy of second complex number: " << endl;
+    c3.display();
+
+    complex c4;
+    c4 = c1;
+
+    cout << "After assignment second complex number to another object: " << endl;
+    c4.display();
+
+    return 0;
+}
+
+
+OUTPUT:
+0 + 0i
+Enter real part: 
+6
+Enter imaginary part: 
+7
+6 + 7i
+Copy of second complex number:
+6 + 7i
+After assignment second complex number to another object:
+0 + 0i
+destructor called for (6,7)
+destructor called for (6,7)
+destructor called for (0,0)
+destructor called for (0,0)
