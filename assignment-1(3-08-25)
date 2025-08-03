@@ -1,0 +1,271 @@
+1.If the all class members of a class are labeled under private then these class members cant be accessed in the main function
+
+
+2.adding elements of an array
+#include<iostream>
+using namespace std;
+
+int main()
+{
+    int i,k[12],sum=0;
+    cout<<"enter the elements of the array:"<<endl;
+
+//for inputing the elements
+    for(i=0;i<12;i++)
+    {
+        cin>>k[i];
+        sum=sum+k[i];
+    }
+    cout<<"sum of the elememts in array:"<<sum<<endl;
+    
+//for printing the elements o fthe array  
+  cout<<"elements in array:"<<endl;
+    for(i=0;i<12;i++)
+    {
+        cout<<k[i]<<" ";
+    }
+    return 0;
+}
+
+
+output:
+enter the elements of the array:
+7
+7
+7
+7
+7
+7
+7
+7
+7
+7
+7
+7
+sum of the elememts in array:84
+elements in array:
+7 7 7
+
+
+
+3.PRINTING GRADE CARD
+
+#include<iostream>
+using namespace std;
+
+class csbs
+{ private:
+    char name[20];
+    char section[5];
+    int regdno,total,avg;
+    int m1,m2,m3,m4,m5;
+    string grade;
+    
+  public:  
+   void getdata(); //To input data
+   void calculate(); //to calculate total and average
+   void display();  //to display data
+};
+   
+   
+   void csbs::getdata()
+    {
+      cout<<"enter student details:"<<endl;    
+      cout<<"name:"<<endl;
+      cin>>name;
+      cout<<"section:"<<endl;
+      cin>>section;
+      cout<<"regestration number:"<<endl;
+      cin>>regdno;
+      cout<<"marks in each subject:"<<endl;
+      cout<<"subject1:"<<endl;
+      cin>>m1;
+      cout<<"subject2:"<<endl;
+      cin>>m2;
+      cout<<"subject3:"<<endl;
+      cin>>m3;
+      cout<<"subject4:"<<endl;
+      cin>>m4;
+      cout<<"subject5:"<<endl;
+      cin>>m5;
+    }
+ 
+  void csbs::calculate()
+   {
+       total=m1+m2+m3+m4+m5;
+       avg=(m1+m2+m3+m4+m5)/5;
+       
+       if(avg >= 90)
+       grade="O";
+       else if(avg >= 80)
+       grade="A+";
+       else if(avg >= 70)
+       grade="A";
+       else if(avg >= 60)
+       grade="B+";
+       else if(avg >= 50) 
+       grade="B";
+       else 
+       grade="C";
+       
+      
+   }
+   
+  void csbs::display()
+   {
+      cout<<"student name:"<<name<<endl;
+      cout<<"student section:"<<section<<endl;
+      cout<<"regestration number:"<<regdno<<endl;
+      cout<<"marks:"<<m1<<","<<m2<<","<<m3<<","<<m4<<","<<m5<<","<<endl;
+      cout<<"Total marks of student:"<<total<<endl;
+      cout<<"average of the student:"<<avg<<endl;
+      cout<<"grade is:"<<grade<<endl;
+   }
+  
+  int main()
+   {
+       csbs student[5];
+       int i;
+       for(i=0;i<5;i++)
+       {
+           student[i].getdata();
+           student[i].calculate();
+           
+       }
+       for(i=0;i<5;i++)
+       {
+           student[i].display();
+       }
+       return 0;
+      
+   }
+
+OUTPUT:
+enter student details:
+name:
+gow
+section:
+a
+regestration number:
+222
+marks in each subject:
+subject1:
+88
+subject2:
+98
+subject3:
+5
+subject4:
+98
+subject5:
+100
+enter student details:
+name:
+kkk
+section:
+b
+regestration number:
+555
+marks in each subject:
+subject1:
+55
+subject2:
+88
+subject3:
+77
+subject4:
+66
+subject5:
+88
+enter student details:
+name:
+dd
+section:
+c
+regestration number:
+66
+marks in each subject:
+subject1:
+55
+subject2:
+44
+subject3:
+89
+subject4:
+87
+subject5:
+98
+enter student details:
+name:
+xxx
+section:
+d
+regestration number:
+77
+marks in each subject:
+subject1:
+55
+subject2:
+65
+subject3:
+88
+subject4:
+98
+subject5:
+70
+enter student details:
+name:
+xyz
+section:
+f
+regestration number:
+666
+marks in each subject:
+subject1:
+55
+subject2:
+9
+subject3:
+99
+subject4:
+99
+subject5:
+100
+student name:gow
+student section:a
+regestration number:222
+marks:88,98,5,98,100,
+Total marks of student:389
+average of the student:77
+grade is:A
+student name:kkk
+student section:b
+regestration number:555
+marks:55,88,77,66,88,
+Total marks of student:374
+average of the student:74
+grade is:A
+student name:dd
+student section:c
+regestration number:66
+marks:55,44,89,87,98,
+Total marks of student:373
+average of the student:74
+grade is:A
+student name:xxx
+student section:d
+regestration number:77
+marks:55,65,88,98,70,
+Total marks of student:376
+average of the student:75
+grade is:A
+student name:xyz
+student section:f
+regestration number:666
+marks:55,9,99,99,100,
+Total marks of student:362
+average of the student:72
+grade is:A
+
+
+
