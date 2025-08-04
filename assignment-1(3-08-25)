@@ -269,3 +269,59 @@ grade is:A
 
 
 
+4.Addition of two complex numbers
+
+#include<iostream>
+using namespace std;
+
+class complex {
+    int real;
+    int img;
+
+public:
+    // To Input numbers
+    void input() {
+        cout << "Enter real part: ";
+        cin >> real;
+        cout << "Enter imaginary part: ";
+        cin >> img;
+    }
+
+    // For Adding 
+    complex add(const complex& c) {
+        return complex(real + c.real, img + c.img);
+    }
+
+    // To Display 
+    void display() {
+        cout << real << " + " << img << "i" << endl;
+    }
+};
+
+int main() {
+    complex c1, c2, c3;
+
+    cout << "Enter first complex number:" << endl;
+    c1.input();
+
+    cout << "Enter second complex number:" << endl;
+    c2.input();
+
+    c3 = c1.add(c2); 
+
+    cout << "Sum of two complex numbers: ";
+    c3.display();
+
+    return 0;
+}
+
+
+OUTPUT:
+Enter first complex number:
+Enter real part: 7
+Enter imaginary part: 7
+Enter second complex number:
+Enter real part: 2
+Enter imaginary part: 3
+Sum of two complex numbers: 9 + 10i
+
