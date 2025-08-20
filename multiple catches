@@ -1,0 +1,67 @@
+#include <iostream>
+using namespace std;
+
+void test(int x)
+{
+    try
+    {
+        if (x == 1) throw x;       // int
+        else if (x == 0) throw 'x'; // char
+        else if (x == -1) throw 1.0; // double
+        cout << "End of try-block \n";
+    }
+    catch (char c) // Catch 1
+    {
+        cout << "Caught a character \n";
+    }
+    catch (int m) // Catch 2
+    {
+        cout << "Caught an integer \n";
+    }
+    catch (double d) // Catch 3
+    {
+        cout << "Caught a double \n";
+    }
+    cout << "End of try-catch system \n\n";
+}
+
+int main()
+{
+    cout << "Testing Multiple Catches \n";
+    
+    cout << "x == 1 \n";
+    test(1);
+
+    cout << "x == 0 \n";
+    test(0);
+
+    cout << "x == -1 \n";
+    test(-1);
+
+    cout << "x == 2 \n";
+    test(2);
+
+    return 0;
+}
+
+
+OUTPUT:
+Testing Multiple Catches 
+x == 1 
+Caught an integer 
+End of try-catch system 
+
+x == 0 
+Caught a character 
+End of try-catch system 
+
+x == -1 
+Caught a double 
+End of try-catch system 
+
+x == 2 
+End of try-block 
+End of try-catch system 
+
+
+
