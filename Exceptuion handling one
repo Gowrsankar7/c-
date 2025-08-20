@@ -1,0 +1,46 @@
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    int a, b;
+    cout << "Enter Values of a and b \n";
+    cin >> a;
+    cin >> b;
+    int x = a - b;
+    try
+    {
+        if (x != 0)
+        {
+            cout << "Result(a/x) = " << a / x << "\n";
+        }
+        else   // There is an exception
+        {
+            throw(x);   // Throws int object
+        }
+    }
+    catch (int x)   // Catches the exception
+    {
+        cout << "Exception caught: x = " << x << "\n";
+    }
+
+    cout << "END";
+    return 0;
+}
+
+
+
+OUTPUT:
+
+
+Enter Values of a and b 
+15
+2
+Result(a/x) = 1
+END
+
+
+Enter Values of a and b 
+10 10
+Exception caught: x = 0
+END
