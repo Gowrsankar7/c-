@@ -1,0 +1,40 @@
+#include<iostream>
+using namespace std;
+
+class A
+{
+    int q,r;
+    public:
+    void set_xy(int w,int y)
+    {
+        q=w;
+        r=y;
+    }
+    friend int sum(A a1);
+};
+int sum (A a1)
+{
+    int A::*ptr1=&A::q;
+    int A::*ptr2=&A::r;
+  A *pm=&a1;
+  int S=a1.*ptr1+pm->*ptr2;
+  return S;
+}
+  int main() {
+   A a;
+  void(A::*pf)(int,int)=&A::set_xy;
+  (a.*pf)(10,20);
+  cout<<"SUM="<<sum(a);
+  A *p=&a;
+  (p->*pf)(30,40);
+  cout<<"\nSUM="<<sum(a);
+  return 0;
+    
+}
+
+
+OUTPUT:
+SUM=30
+SUM=70
+
+
